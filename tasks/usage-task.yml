@@ -10,7 +10,7 @@ inputs:
 outputs:
   - name: email
 run:
-  path: sh #cfusagerepo/ci/scripts/usage-script.sh
+  path: cfusagerepo/ci/scripts/usage-script.sh
   args:
   - -exc
   - |
