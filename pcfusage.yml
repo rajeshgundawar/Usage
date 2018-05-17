@@ -1,0 +1,43 @@
+jobs:
+- name: cfusage 
+  max_in_flight: 1
+  plan:
+  - get: cfusagerepo
+  - task: cf-usage-task 
+    file: cfusagerepo/ci/tasks/usage-task.yml
+    params:
+      API_URL: {{API_URL}}
+      USERNAME: {{USERNAME}}
+      PASSWORD: {{PASSWORD}}
+      ORG: {{ORG}}
+      ENV: {{ENV}}
+      TO: {{TO}}
+      THRESHOLD: {{THRESHOLD}}
+#  - get: email-resource-source
+#  - try: 
+#      put: send-an-email
+#      params:
+#      subject: email/subject
+#      body: email/body
+#      to: email/usr 
+resource_types:
+  - name: email
+    type: docker-image
+    source:
+      repository: pcfseceng/email-resource
+      tag: latest
+resources:
+#  - name: send-an-email
+#    type: email
+#   source:
+#      smtp:
+#        host: {{SMTP}}
+#        port: {{PORT}}
+#        username: {{USR}}
+#        password: {{PAS}}
+#        from: {{FROM}} 
+  - name: cfusagerepo
+    type: git
+    source: https://github.com/rajeshgundawar/cfusage.git
+      branch: master
+     
