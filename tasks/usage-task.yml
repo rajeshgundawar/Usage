@@ -11,8 +11,3 @@ outputs:
   - name: email
 run:
   path: cfusagerepo/ci/scripts/usage-script.sh
-  args:
-  - -exc
-  - |
-    env
-    echo "Enough CF Memory is there"
