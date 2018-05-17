@@ -10,4 +10,4 @@ inputs:
 outputs:
   - name: email
 run:
-  path: cfusagerepo/ci/scripts/usage-script.sh
+  path: cfusagerepo/scripts/usage-script.sh
