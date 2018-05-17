@@ -4,7 +4,7 @@ jobs:
   plan:
   - get: cfusagerepo
   - task: cf-usage-task 
-    file: cfusagerepo/ci/tasks/usage-task.yml
+    file: cfusagerepo/tasks/usage-task.yml
     params:
       API_URL: {{API_URL}}
       USERNAME: {{USERNAME}}
@@ -38,6 +38,6 @@ resources:
 #        from: {{FROM}} 
   - name: cfusagerepo
     type: git
-    source: https://github.com/rajeshgundawar/cfusage.git
+    source: 
+      uri: https://github.com/rajeshgundawar/cfusage.git
       branch: master
-     
