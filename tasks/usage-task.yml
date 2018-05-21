@@ -3,7 +3,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: pavane910/mailx
+    repository: gundawar/cf-cli
     tag: latest
 inputs:
   - name: cfusagerepo
