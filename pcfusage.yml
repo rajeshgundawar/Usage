@@ -24,7 +24,7 @@ resource_types:
   - name: email
     type: docker-image
     source:
-      repository: gundawar/cf-cli
+      repository: pcfseceng/email-resource
       tag: latest
 resources:
   - name: send-an-email
