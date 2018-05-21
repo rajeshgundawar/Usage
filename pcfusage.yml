@@ -14,8 +14,8 @@ jobs:
       TO: {{TO}}
       THRESHOLD: {{THRESHOLD}}
 #  - get: email-resource-source
-#  - try: 
-#      put: send-an-email
+  - try: 
+      put: send-an-email
 #      params:
 #      subject: email/subject
 #      body: email/body
@@ -27,8 +27,8 @@ resource_types:
       repository: pcfseceng/email-resource
       tag: latest
 resources:
-#  - name: send-an-email
-#    type: email
+  - name: send-an-email
+    type: email
 #   source:
 #      smtp:
 #        host: {{SMTP}}
