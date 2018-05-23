@@ -17,6 +17,6 @@ else
  subject="$ENV environment $ORG Org Memory Usage is above Threshold $THRESHOLD%"
  to="$TO" 
  body="Existing Memory Usage is percentage_usage is above threshold:THRESHOLD"
- echo $body |mailx -s "$subject" rajesh.gundawar@techolution.com
+ echo $body |mail -s "$subject" rajesh.gundawar@techolution.com
  echo "End of task"
 fi
