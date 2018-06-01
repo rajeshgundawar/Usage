@@ -20,6 +20,7 @@ else
  to="$TO" 
  body="Existing Memory Usage is percentage_usage is above threshold:THRESHOLD"
 # echo $body |mail -s "$subject" rajesh.gundawar@techolution.com
+ aws s3 ls
  aws ses send-email \
  --from "$TO" \
  --destination "ToAddresses=$TO" \
