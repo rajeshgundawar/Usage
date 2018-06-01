@@ -23,7 +23,8 @@ else
  echo "printing $body" 
 # echo $body |mail -s "$subject" rajesh.gundawar@techolution.com
 # aws s3 ls
-echo "{
+cat <<EOF > ./test.json
+{
    "Subject": {
        "Data": "Test email sent using the AWS CLI",
        "Charset": "UTF-8"
@@ -38,8 +39,9 @@ echo "{
            "Charset": "UTF-8"
        }
    }
-}">test.json
- aws ses send-email \
+}
+EOF 
+aws ses send-email \
  --from "$TO" \
  --destination "ToAddresses=$TO" \
  --message file://test.json
