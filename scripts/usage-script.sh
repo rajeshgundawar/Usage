@@ -1,4 +1,5 @@
 #!/bin/sh
+aws configure set default.region us-east-1
 cf install-plugin 'Usage Report' -f
 cf login -a $API_URL -u $USERNAME -p $PASSWORD -o $ORG
 echo "Running cf usage report"
