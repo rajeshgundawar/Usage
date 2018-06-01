@@ -1,4 +1,5 @@
 #!/bin/sh
+cf install-plugin 'Usage Report' -f
 cf login -a $API_URL -u $USERNAME -p $PASSWORD -o $ORG
 echo "Running cf usage report"
 cf usage-report >usage_report.txt
@@ -18,6 +19,10 @@ else
  subject="$ENV environment $ORG Org Memory Usage is above Threshold $THRESHOLD%"
  to="$TO" 
  body="Existing Memory Usage is percentage_usage is above threshold:THRESHOLD"
- echo $body |mail -s "$subject" rajesh.gundawar@techolution.com
+# echo $body |mail -s "$subject" rajesh.gundawar@techolution.com
+ aws ses send-email \
+ --from "$TO" \
+ --destination "$TO" \
+ --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=$body,Charset=utf8},Html={Data=,Charset=utf8}}
  echo "End of task"
 fi

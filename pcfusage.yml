@@ -13,29 +13,9 @@ jobs:
       ENV: {{ENV}}
       TO: {{TO}}
       THRESHOLD: {{THRESHOLD}}
-#  - get: email-resource-source
-#  - try: 
-#      put: send-an-email
-#      params:
-#      subject: email/subject
-#      body: email/body
-#      to: email/usr 
-resource_types:
-  - name: email
-    type: docker-image
-    source:
-      repository: gundawar/cf-cli
-      tag: latest
+      AWS_ACCESS_KEY_ID: ((access-key-id))
+      AWS_SECRET_ACCESS_KEY: ((secret-access-key))
 resources:
-#  - name: send-an-email
-#    type: email
-#   source:
-#      smtp:
-#        host: {{SMTP}}
-#        port: {{PORT}}
-#        username: {{USR}}
-#        password: {{PAS}}
-#        from: {{FROM}} 
   - name: cfusagerepo
     type: git
     source: 
