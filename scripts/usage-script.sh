@@ -15,14 +15,14 @@ else
  echo "Existing Memory Usage is $percentage_usage is above threshold:$THRESHOLD"
  echo "Preparing Email content"
  date
- echo "sending mail"
+# echo "sending mail"
  subject="$ENV environment $ORG Org Memory Usage is above Threshold $THRESHOLD%"
  to="$TO" 
  body="Existing Memory Usage is percentage_usage is above threshold:THRESHOLD"
 # echo $body |mail -s "$subject" rajesh.gundawar@techolution.com
  aws ses send-email \
  --from "$TO" \
- --destination "$TO" \
+ --destination "ToAddresses=$TO" \
  --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=$body,Charset=utf8},Html={Data=,Charset=utf8}}"
  echo "End of task"
 fi
