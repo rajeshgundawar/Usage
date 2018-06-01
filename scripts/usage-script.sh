@@ -1,4 +1,4 @@
-#!/bin/sh
+!/bin/sh
 cf install-plugin 'Usage Report' -f
 cf login -a $API_URL -u $USERNAME -p $PASSWORD -o $ORG
 echo "Running cf usage report"
@@ -23,6 +23,6 @@ else
  aws ses send-email \
  --from "$TO" \
  --destination "$TO" \
- --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=$body,Charset=utf8},Html={Data=,Charset=utf8}}
+ --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=$body,Charset=utf8},Html={Data=,Charset=utf8}}"
  echo "End of task"
 fi
