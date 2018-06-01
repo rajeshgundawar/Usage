@@ -1,4 +1,4 @@
-!/bin/sh
+#!/bin/sh
 cf install-plugin 'Usage Report' -f
 cf login -a $API_URL -u $USERNAME -p $PASSWORD -o $ORG
 echo "Running cf usage report"
