@@ -20,5 +20,5 @@ resources:
   - name: cfusagerepo
     type: git
     source: 
-      uri: https://github.com/rajeshgundawar/cfusage.git
+      uri: https://github.com/rajeshgundawar/Usage.git
       branch: master
