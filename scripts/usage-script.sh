@@ -23,29 +23,11 @@ else
  echo "printing $body" 
 # echo $body |mail -s "$subject" rajesh.gundawar@techolution.com
 # aws s3 ls
-cat <<EOF > ./test.json
-{
-   "Subject": {
-       "Data": "Test email sent using the AWS CLI",
-       "Charset": "UTF-8"
-   },
-   "Body": {
-       "Text": {
-           "Data": "This is the message body in text format.",
-           "Charset": "UTF-8"
-       },
-       "Html": {
-           "Data": "This message body contains HTML formatting. It can, for example, contain links like this one: <a class=\"ulink\" href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide\" target=\"_blank\">Amazon SES Developer Guide</a>.",
-           "Charset": "UTF-8"
-       }
-   }
-}
-EOF 
 aws ses send-email \
  --from "$TO" \
  --destination "ToAddresses=$TO" \
  --message file://test.json
-# --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=echo $body,Charset=utf8},Html={Data=,Charset=utf8}}"
+ --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=echo $body,Charset=utf8},Html={Data=,Charset=utf8}}"
 # --message "Subject={Data=from ses,Charset=utf8},Body={Text={Data=ses says hi,Charset=utf8},Html={Data=,Charset=utf8}}"
 echo "End of task"
 fi
