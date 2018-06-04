@@ -26,8 +26,6 @@ else
 aws ses send-email \
  --from "$TO" \
  --destination "ToAddresses=$TO" \
-# --message file://test.json
  --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=echo $body,Charset=utf8},Html={Data=,Charset=utf8}}"
-# --message "Subject={Data=from ses,Charset=utf8},Body={Text={Data=ses says hi,Charset=utf8},Html={Data=,Charset=utf8}}"
 echo "End of task"
 fi
