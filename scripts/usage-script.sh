@@ -20,12 +20,12 @@ else
  subject="$ENV environment $ORG Org Memory Usage is above Threshold $THRESHOLD%"
  to="$TO" 
  body="Existing Memory Usage is percentage_usage is above threshold:THRESHOLD"
- echo "printing $body" 
+# echo "printing $body" 
 # echo $body |mail -s "$subject" rajesh.gundawar@techolution.com
 # aws s3 ls
 aws ses send-email \
  --from "$TO" \
  --destination "ToAddresses=$TO" \
- --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=echo $body,Charset=utf8},Html={Data=,Charset=utf8}}"
+ --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=$echo $body,Charset=utf8},Html={Data=,Charset=utf8}}"
 echo "End of task"
 fi
