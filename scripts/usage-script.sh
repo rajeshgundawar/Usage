@@ -24,24 +24,9 @@ else
 # echo $body |mail -s "$subject" rajesh.gundawar@techolution.com
 # aws s3 ls
 aws --version
-cat <<EOF > ./message.json
-{"Data": {
-    "action": "create",
-    "fields": {
-        "name": "John",
-        "email": "rajesh.gundawar@techolution.com",
-        "subject": "Order 1234",
-        "body": "Order info for #1234"
-         }
-    }
-}  
-EOF
-ls -l
-cat message.json
-aws ses send-raw-email --raw-message file://message.json
-#aws ses send-email \
-# --from "$TO" \
-# --destination "ToAddresses=$TO" \
-# --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=$body,Charset=utf8},Html={Data=,Charset=utf8}}"
+aws ses send-email \
+ --from "$TO" \
+ --destination "ToAddresses=$TO" \
+ --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=$body,Charset=utf8},Html={Data=,Charset=utf8}}"
 echo "End of task"
 fi
