@@ -29,7 +29,7 @@ cat <<EOF > ./message.json
 {"ticket": {
     "action": "create",
     "fields": {
-        "name": "John Smith",
+        "name": John,
         "email": "rajesh.gundawar@techolution.com",
         "subject": "Order 1234",
         "body": "Order info for #1234"
