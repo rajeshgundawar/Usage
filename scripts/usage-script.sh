@@ -26,7 +26,7 @@ else
 aws --version
 cat <<EOF > ./message.json
 {
-              "Data": "From: $To\nTo: $TO\nSubject: $subject\nMIME-Version: 1.0\nContent-type: Multipart/Mixed; boundary=\"NextPart\"\n\n--NextPart\nContent-Type: text/plain\n\n\n--NextPart\nContent-Type: text/csv;\nContent-Disposition: attachment; filename=\"ai_si_report.csv\";\npath=\"ai_si_report.csv\"\n;Content-Transfer-Encoding: base64;\n--NextPart--"
+              "Data": "From: rajesh.gundawar@techolution.com\nTo: $TO\nSubject: $subject\nMIME-Version: 1.0\nContent-type: Multipart/Mixed; boundary=\"NextPart\"\n\n--NextPart\nContent-Type: text/plain\n\n\n--NextPart\nContent-Type: text/csv;\nContent-Disposition: attachment; filename=\"ai_si_report.csv\";\npath=\"ai_si_report.csv\"\n;Content-Transfer-Encoding: base64;\n--NextPart--"
 }
 EOF
 aws ses send-raw-email --raw-message file://message.json
