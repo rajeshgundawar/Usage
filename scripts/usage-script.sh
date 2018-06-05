@@ -24,9 +24,15 @@ else
 # echo $body |mail -s "$subject" rajesh.gundawar@techolution.com
 # aws s3 ls
 aws --version
-aws ses send-email \
- --from "$TO" \
- --destination "ToAddresses=$TO" \
- --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=$body,Charset=utf8},Html={Data=,Charset=utf8}}"
+cat <<EOF > ./message.json
+{
+              "Data": "From: $To\nTo: $TO\nSubject: $subject\nMIME-Version: 1.0\nContent-type: Multipart/Mixed; boundary=\"NextPart\"\n\n--NextPart\nContent-Type: text/plain\n\n\n--NextPart\nContent-Type: text/csv;\nContent-Disposition: attachment; filename=\"ai_si_report.csv\";\npath=\"ai_si_report.csv\"\n;Content-Transfer-Encoding: base64;\n--NextPart--"
+}
+EOF
+aws ses send-raw-email --raw-message file://message.json
+#aws ses send-email \
+# --from "$TO" \
+# --destination "ToAddresses=$TO" \
+# --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=$body,Charset=utf8},Html={Data=,Charset=utf8}}"
 echo "End of task"
 fi
