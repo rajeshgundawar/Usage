@@ -23,6 +23,7 @@ else
 # echo "printing $body" 
 # echo $body |mail -s "$subject" rajesh.gundawar@techolution.com
 # aws s3 ls
+aws --version
 aws ses send-email \
  --from "$TO" \
  --destination "ToAddresses=$TO" \
