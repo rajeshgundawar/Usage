@@ -11,3 +11,5 @@ outputs:
   - name: email
 run:
   path: cfusagerepo/scripts/usage-script.sh
+  ls -l
+  
