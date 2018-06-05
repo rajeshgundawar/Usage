@@ -7,6 +7,7 @@ cf usage-report >usage_report.txt
 mem_usage=$(cat usage_report.txt | grep $ORG| cut -d' ' -f5) 
 mem_quota=$(cat usage_report.txt | grep $ORG| cut -d' ' -f8)
 percentage_usage=$((100*$mem_usage/$mem_quota))
+echo $percentage_usage
 if [ "$percentage_usage" -lt "$THRESHOLD" ]
 then
  echo "Existing Memory Usage is $percentage_usage is below threshold"
