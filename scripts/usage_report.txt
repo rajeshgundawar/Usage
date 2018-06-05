@@ -1,0 +1,42 @@
+Org system is consuming 26600 MB of 102400 MB.
+	Space system is consuming 7552 MB memory (7%) of org quota.
+		10 apps: 5 running 5 stopped
+		24 instances: 12 running, 12 stopped
+	Space notifications-with-ui is consuming 128 MB memory (0%) of org quota.
+		1 apps: 1 running 0 stopped
+		2 instances: 2 running, 0 stopped
+	Space pivotal-account-space is consuming 2048 MB memory (2%) of org quota.
+		2 apps: 1 running 1 stopped
+		4 instances: 2 running, 2 stopped
+	Space autoscaling is consuming 768 MB memory (0%) of org quota.
+		1 apps: 1 running 0 stopped
+		3 instances: 3 running, 0 stopped
+	Space iaas-brokers is consuming 128 MB memory (0%) of org quota.
+		1 apps: 1 running 0 stopped
+		2 instances: 2 running, 0 stopped
+	Space nfs is consuming 1024 MB memory (1%) of org quota.
+		1 apps: 1 running 0 stopped
+		1 instances: 1 running, 0 stopped
+	Space metrics-v1-4 is consuming 2112 MB memory (2%) of org quota.
+		10 apps: 5 running 5 stopped
+		10 instances: 5 running, 5 stopped
+	Space healthwatch is consuming 11816 MB memory (11%) of org quota.
+		13 apps: 10 running 3 stopped
+		25 instances: 18 running, 7 stopped
+	Space SMOKE-1-SPACE-c68ed24339936552 is consuming 1024 MB memory (1%) of org quota.
+		1 apps: 1 running 0 stopped
+		1 instances: 1 running, 0 stopped
+Org sonic is consuming 231828 MB of 256000 MB.
+	Space prod is consuming 231828 MB memory (90%) of org quota.
+		36 apps: 36 running 0 stopped
+		107 instances: 107 running, 0 stopped
+Org redis-smoke-test-org is consuming 0 MB of 10240 MB.
+	Space redis-smoke-test-space is consuming 0 MB memory (0%) of org quota.
+		0 apps: 0 running 0 stopped
+		0 instances: 0 running, 0 stopped
+Org splunk-nozzle-org is consuming 768 MB of 102400 MB.
+	Space splunk-nozzle-space is consuming 768 MB memory (0%) of org quota.
+		1 apps: 1 running 0 stopped
+		3 instances: 3 running, 0 stopped
+You are running 77 apps in 4 org(s), with a total of 182 instances.
+
