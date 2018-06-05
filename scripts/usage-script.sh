@@ -25,7 +25,7 @@ else
 # aws s3 ls
 aws --version
 cat <<EOF > ./message.json
-{"ticket": {
+{"Data": {
     "action": "create",
     "fields": {
         "name": "John",
