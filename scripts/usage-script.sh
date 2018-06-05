@@ -27,6 +27,6 @@ aws --version
 aws ses send-email \
  --from "$TO" \
  --destination "ToAddresses=$TO" \
- --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data=echo "Existing Memory Usage is percentage_usage is above threshold:THRESHOLD",Charset=utf8},Html={Data=,Charset=utf8}}"
+ --message "Subject={Data=$subject,Charset=utf8},Body={Text={Data="$body",Charset=utf8},Html={Data=,Charset=utf8}}"
 echo "End of task"
 fi
