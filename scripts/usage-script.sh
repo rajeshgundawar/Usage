@@ -18,7 +18,8 @@ else
  echo "Preparing Email content"
  date
 # echo "sending mail"
- subject="$ENV environment $ORG Org Memory Usage is above Threshold $THRESHOLD%"
+# subject="$ENV environment $ORG Org Memory Usage is above Threshold $THRESHOLD%"
+ subject="$ENV environment $ORG Org Memory Usage alert" 
  to="$TO"
  body="The CF memory utilisation for $ENV environment is: $percentage_usage%" 
 # body="Existing Memory Usage is above threshold: $percentage_usage%"
