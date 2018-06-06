@@ -20,7 +20,7 @@ else
 # echo "sending mail"
  subject="$ENV environment $ORG Org Memory Usage is above Threshold $THRESHOLD%"
  to="$TO"
- body="The CF memory utilisation for $ENV environment is: $percentage_usage%" 
+ body="The CF memory utilisation for Sandbox env is: $percentage_usage%" 
 # body="Existing Memory Usage is above threshold: $percentage_usage%"
 # echo "printing $body" 
 # echo $body |mail -s "$subject" rajesh.gundawar@techolution.com
