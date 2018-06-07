@@ -1,7 +1,7 @@
 #!/bin/sh
 aws configure set default.region us-east-1
 cf install-plugin 'Usage Report' -f
-cf login -a $API_URL -u $USERNAME -p $PASSWORD -o $ORG -s $ENV
+cf login -a $API_URL -u $USERNAME -p $PASSWORD -o $ORG -s $SPACE
 echo "Running cf usage report"
 cf usage-report >usage_report.txt
 mem_usage=$(cat usage_report.txt | grep $ORG| cut -d' ' -f5) 

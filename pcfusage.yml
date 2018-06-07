@@ -1,12 +1,8 @@
 resources:
-- name: 5m
+- name: 2m
   type: time
-  source: {interval: 5m}
-jobs:
-- name: something-every-5m
-  plan:
-  - get: 5m
-    trigger: true
+  source: 
+    interval: 2m
 jobs:
 - name: cfusage 
   max_in_flight: 1
