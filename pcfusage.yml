@@ -28,8 +28,3 @@ resources:
       uri: https://github.com/rajeshgundawar/Usage.git
       branch: master
 
-resources:
-- name: my-timer
-  type: time
-  source:
-    interval: 2m
