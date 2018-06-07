@@ -8,6 +8,8 @@ jobs:
   max_in_flight: 1
   plan:
   - get: cfusagerepo
+  - get: 2m
+    trigger: true
   - task: cf-usage-task 
     file: cfusagerepo/tasks/usage-task.yml
     params:
