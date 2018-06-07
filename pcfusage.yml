@@ -1,8 +1,3 @@
-resources:
-- name: 2m
-  type: time
-  source: 
-    interval: 2m
 jobs:
 - name: cfusage 
   max_in_flight: 1
@@ -29,4 +24,7 @@ resources:
     source: 
       uri: https://github.com/rajeshgundawar/Usage.git
       branch: master
-
+  - name: 2m
+    type: time
+    source:
+      interval: 2m
