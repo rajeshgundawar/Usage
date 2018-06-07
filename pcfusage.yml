@@ -3,7 +3,6 @@ resources:
   type: time
   source: 
     interval: 2m
-resource_types: []
 jobs:
 - name: cfusage 
   max_in_flight: 1
