@@ -1,7 +1,7 @@
 #!/bin/sh
 aws configure set default.region us-east-1
 cf install-plugin 'Usage Report' -f
-cf login -a $API_URL -u $USERNAME -p $PASSWORD -o $ORG -s $SPACE
+cf login -a $API_URL -u $USERNAME -p $PASSWORD -o $ORG -s $ENV
 echo "Running cf usage report"
 cf usage-report >usage_report.txt
 mem_usage=$(cat usage_report.txt | grep $ORG| cut -d' ' -f5) 
@@ -19,7 +19,7 @@ else
  date
 # echo "sending mail"
 # subject="$ENV environment $ORG Org Memory Usage is above Threshold $THRESHOLD%"
- subject="$ENV environment $ORG Org Memory $SPACE Usage alert" 
+ subject="Nonprod environment $ORG Org Memory Usage alert" 
  to="$TO"
  body="The CF memory utilization for $ENV environment is: $percentage_usage%" 
 # body="Existing Memory Usage is above threshold: $percentage_usage%"
