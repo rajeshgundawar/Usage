@@ -2,7 +2,7 @@ jobs:
 - name: cfusage 
   max_in_flight: 1
   plan:
-  - get: 2m
+  - get: 10m
     trigger: true
   - get: cfusagerepo
   - task: cf-usage-task 
@@ -24,7 +24,7 @@ resources:
     source: 
       uri: https://github.com/rajeshgundawar/Usage.git
       branch: master
-  - name: 2m
+  - name: 10m
     type: time
     source:
-      interval: 2m
+      interval: 10m
