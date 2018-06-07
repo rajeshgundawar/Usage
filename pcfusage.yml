@@ -1,7 +1,7 @@
-jobs:
-- name: 10m
+resources:
+- name: 5m
   type: time
-  source: {interval: 10m}
+  source: {interval: 5m}
 jobs:
 - name: cfusage 
   max_in_flight: 1
