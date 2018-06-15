@@ -18,6 +18,20 @@ jobs:
       AWS_ACCESS_KEY_ID: ((access-key-id))
       AWS_SECRET_ACCESS_KEY: ((secret-access-key))
       region_name: us-east-1
+    on_failure:
+      put: slack-alert
+      params:
+        channel: '#sonic-internal'
+        icon_emoji: ':concourse:'
+        text: |
+          :sample: Test
+    on_success:
+      put: slack-alert
+      params:
+        channel: '#sonic-internal'
+        icon_emoji: ':concourse:'
+        text: |
+          :sample: Test
 resources:
   - name: cfusagerepo
     type: git
@@ -34,20 +48,6 @@ resources:
     source:
       repository: cfcommunity/slack-notification-resource
       tag: latest
-on_failure:
-      put: slack-alert
-      params:
-        channel: '#sonic-internal'
-        icon_emoji: ':concourse:'
-        text: |
-          :sample: Test
-on_success:
-      put: slack-alert
-      params:
-        channel: '#sonic-internal'
-        icon_emoji: ':concourse:'
-        text: |
-          :sample: Test
 
 
 #  - name: 10m
