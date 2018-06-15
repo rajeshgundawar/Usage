@@ -18,7 +18,7 @@ jobs:
       AWS_ACCESS_KEY_ID: ((access-key-id))
       AWS_SECRET_ACCESS_KEY: ((secret-access-key))
       region_name: us-east-1
-      SLACK_CHANNEL:'#sonic-internal'
+      SLACK_CHANNEL: '#sonic-internal'
     on_failure:
       put: slack-alert
       params:
