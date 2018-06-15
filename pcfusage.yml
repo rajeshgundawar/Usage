@@ -24,6 +24,21 @@ resources:
     source: 
       uri: https://github.com/rajeshgundawar/Usage.git
       branch: master
+      tag: latest
+  - name: slack-alert
+    type: slack-notification
+    source:
+      uri: https://hooks.slack.com/services/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
+  resource_types:
+    - name: slack-notification
+      type: docker-image
+      source:
+        repository: cfcommunity/slack-notification-resource
+        tag: latest
+
+
+
+
 #  - name: 10m
 #    type: time
 #    source:
