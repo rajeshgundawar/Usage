@@ -34,8 +34,20 @@ resources:
     source:
       repository: cfcommunity/slack-notification-resource
       tag: latest
-
-
+on_failure:
+      put: slack-alert
+      params:
+        channel: '#sonic-internal'
+        icon_emoji: ':concourse:'
+        text: |
+          :sample: Test
+on_success:
+      put: slack-alert
+      params:
+        channel: '#sonic-internal'
+        icon_emoji: ':concourse:'
+        text: |
+          :sample: Test
 
 
 #  - name: 10m
